@@ -17,24 +17,22 @@
   <!-- LIBRARY SCRIPTS -->
   <script src="../node_modules/jquery/dist/jquery.min.js"></script>
   <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../node_modules/es6-promise/dist/es6-promise.min.js"></script>
   <script src="../node_modules/lodash/lodash.min.js"></script>
   <script src="../node_modules/angular/angular.min.js"></script>
-  <script src="../node_modules/es6-promise/dist/es6-promise.min.js"></script>
-
+  <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
 </head>
-<body>
 
-  <div ng-app="EarthTionary" ng-controller="mainController as mc" class="earthtionary">
+<body>
+  <div ng-app="EarthTionary" class="earthtionary">
     <div class="container">
 
-      <h1>Hello world!</h1>
-      <p>{{ mc.demoMessage }}</p>
+      <ui-view></ui-view>
 
     </div>
   </div>
 
   <!-- OWN SCRIPTS -->
   <script src="app.min.js"></script>
-
 </body>
 </html>
