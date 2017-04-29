@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ChatSockets</title>
+  <meta name="description" content="Simple chat application with WebScokets over MEAN">
+
+  <!-- FIX VIEWPORT FOR MOBILE DEVICES -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- LIBRARY STYLES -->
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+  <!-- OWN STYLES -->
+  <link rel="stylesheet" href="app.min.css">
+
+  <!-- LIBRARY SCRIPTS -->
+  <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../node_modules/lodash/lodash.min.js"></script>
+  <script src="../node_modules/angular/angular.min.js"></script>
+  <script src="../node_modules/es6-promise/dist/es6-promise.min.js"></script>
+
+</head>
+<body>
+
+  <div ng-app="EarthTionary" ng-controller="mainController as mc" class="earthtionary">
+    <div class="container">
+
+      <h1>Hello world!</h1>
+      <p>{{ mc.demoMessage }}</p>
+
+    </div>
+  </div>
+
+  <!-- OWN SCRIPTS -->
+  <script src="app.min.js"></script>
+
+</body>
+</html>
