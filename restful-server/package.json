@@ -1,0 +1,19 @@
+{
+  "name": "earthtionary-rest-server",
+  "version": "0.0.1",
+  "description": "Earthtionary REST server",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "morgan": "^1.8.1"
+  },
+  "devDependencies": {
+    "readline": "^1.3.0"
+  }
+}

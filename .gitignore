@@ -638,3 +638,4 @@ ENV/
 
 # Rope project settings
 .ropeproject
+!/restful-server/express-app/
