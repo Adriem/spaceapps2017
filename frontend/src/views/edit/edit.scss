@@ -1,4 +1,4 @@
-#searchScreen {
+#editScreen {
   background: $background-color;
 
   * {
@@ -48,17 +48,12 @@
   .search-form {
     text-align: center;
     padding: 0 150px;
-    margin-bottom: 40px;
 
     //.search-box {
     //  border-radius: 0;
     //  border: none;
     //  border-bottom: 1px solid $accent-border-color;
     //}
-
-    .search-button {
-      transition: font-size 0.1s linear;
-    }
 
     .search-filters {
       margin-top: 20px;
@@ -86,7 +81,6 @@
     .search-results-title {
       font-size: 18pt;
       color: $section-title-color;
-      font-family: "Georgia";
     }
 
     .search-result {
@@ -94,8 +88,6 @@
       text-align: justify;
       transition-delay: 0.3s;
       transition: margin 1.0s ease-in-out;
-      margin-top: 10px;
-      margin-bottom: 10px;
 
       .term-title {
         font-size: 15pt;
@@ -110,20 +102,6 @@
 
       .btn-toolbar {
         padding: 5px 0;
-      }
-    }
-
-    .add-result-form {
-      margin-top: 40px;
-      text-align: center;
-
-      h3 {
-        color: $header-title-color;
-        font-family: "Georgia";
-      }
-
-      button {
-        display: inline-block;
       }
     }
   }

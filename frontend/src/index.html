@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>ChatSockets</title>
+  <title>EarthTionary</title>
   <meta name="description" content="Simple chat application with WebScokets over MEAN">
 
   <!-- FIX VIEWPORT FOR MOBILE DEVICES -->
@@ -10,6 +10,7 @@
 
   <!-- LIBRARY STYLES -->
   <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../node_modules/angular-ui-notification/dist/angular-ui-notification.min.css">
 
   <!-- OWN STYLES -->
   <link rel="stylesheet" href="app.min.css">
@@ -21,11 +22,15 @@
   <script src="../node_modules/lodash/lodash.min.js"></script>
   <script src="../node_modules/angular/angular.min.js"></script>
   <script src="../node_modules/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="../node_modules/angular-ui-notification/dist/angular-ui-notification.min.js"></script>
 </head>
 
 <body>
   <div ng-app="EarthTionary" class="earthtionary">
     <div loader></div>
+    <div modal-bootstrap id="editModal">
+      <modal-header>Demo Modal!!</modal-header>
+    </div>
     <ui-view></ui-view>
   </div>
 

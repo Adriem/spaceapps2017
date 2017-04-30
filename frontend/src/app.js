@@ -1,4 +1,4 @@
-angular.module('EarthTionary', ['ui.router']).config([
+angular.module('EarthTionary', ['ui.router', 'ui-notification']).config([
   '$stateProvider',
   '$urlRouterProvider',
   function ($stateProvider, $urlRouterProvider) {
@@ -6,10 +6,6 @@ angular.module('EarthTionary', ['ui.router']).config([
       .state('search', {
         url: '/',
         templateUrl: 'search.tpl.html'
-      })
-      .state('results', {
-        url: '/results',
-        templateUrl: 'results.tpl.html'
       })
       .state('edit', {
         url: '/edit',

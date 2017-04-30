@@ -6,6 +6,8 @@ html {
 }
 
 .earthtionary {
+  @import "directives/modal/modal.scss";
   @import "directives/loader/loader.scss";
   @import "views/search/search";
+  @import "views/edit/edit";
 }
