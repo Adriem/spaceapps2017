@@ -1,0 +1,37 @@
+<div class="modal fade"
+     tabindex="-1"
+     role="dialog"
+     aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+           <!--data-ng-show="!sections || sections.header">-->
+        <button type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+          <span class="sr-only">Close</span>
+        </button>
+        <h1 class="modal-title"
+            data-ng-transclude="header">
+          <!-- Header content here -->
+        </h1>
+        <button class="modal-close-btn"
+                data-ng-click="closeModal()">
+          <i class="fa fa-close"></i>
+        </button>
+      </div>
+      <div class="modal-body"
+           data-ng-transclude="body">
+        <!--data-ng-show="!sections || sections.body"-->
+        <!-- Body content here -->
+      </div>
+      <div class="modal-footer"
+           data-ng-transclude="footer">
+        <!--data-ng-show="!sections || sections.footer"-->
+        <!-- Footer content here -->
+      </div>
+    </div>
+  </div>
+</div>

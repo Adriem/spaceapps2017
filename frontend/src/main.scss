@@ -1,0 +1,13 @@
+@import "styles/_variables.scss";
+@import "styles/_mixins.scss";
+
+html {
+  background-color: $background-color;
+}
+
+.earthtionary {
+  @import "directives/modal/modal.scss";
+  @import "directives/loader/loader.scss";
+  @import "views/search/search";
+  @import "views/edit/edit";
+}

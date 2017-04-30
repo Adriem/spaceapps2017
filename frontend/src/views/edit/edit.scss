@@ -1,0 +1,109 @@
+#editScreen {
+  background: $background-color;
+
+  * {
+    transition: margin 0.3s ease-in-out, font-size 0.3s ease-in-out, padding 0.3s ease-in-out, border-color 0.7s, visibility 0.7s, opacity 0.7s;
+  }
+
+  &.expanded {
+    .navbar-default {
+      border-color: rgba(0, 0, 0, 0);
+
+      .navbar-brand {
+        margin-top: 150px;
+        margin-left: -20px;
+        font-size: 76px;
+      }
+    }
+
+    .search-form {
+      margin-top: 190px;
+      padding: 0;
+
+      .search-box {
+        font-size: 16pt;
+        padding: 30px 20px;
+      }
+
+      .search-button {
+        font-size: 16pt;
+        padding: 15px;
+      }
+    }
+
+  }
+
+  .navbar-default {
+    background: $background-color;
+
+    .navbar-brand {
+      font-family: "Georgia", serif;
+    }
+  }
+
+  .content-container {
+    padding: $main-content-padding;
+  }
+
+  .search-form {
+    text-align: center;
+    padding: 0 150px;
+
+    //.search-box {
+    //  border-radius: 0;
+    //  border: none;
+    //  border-bottom: 1px solid $accent-border-color;
+    //}
+
+    .search-filters {
+      margin-top: 20px;
+    }
+  }
+
+  .search-results {
+    transition-delay: 0.3s;
+    transition: margin 0.7s ease-in-out, visibility 0.7s, opacity 0.7s;
+
+    &.results-hidden {
+      visibility: hidden;
+      opacity: 0;
+      margin-top: 200px;
+      transition-delay: 0.3s;
+      transition: margin 0.7s ease-in-out, visibility 0.7s, opacity 0.7s;
+
+      .search-result {
+        margin-top: 80px;
+        transition-delay: 0.3s;
+        transition: margin 1.0s ease-in-out;
+      }
+    }
+
+    .search-results-title {
+      font-size: 18pt;
+      color: $section-title-color;
+    }
+
+    .search-result {
+      font-size: 13pt;
+      text-align: justify;
+      transition-delay: 0.3s;
+      transition: margin 1.0s ease-in-out;
+
+      .term-title {
+        font-size: 15pt;
+      }
+
+      .media-extras {
+        padding: 5px 0;
+        .media-extra-title {
+          font-weight: bold;
+        }
+      }
+
+      .btn-toolbar {
+        padding: 5px 0;
+      }
+    }
+  }
+
+}

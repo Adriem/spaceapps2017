@@ -1,0 +1,82 @@
+<div data-ng-controller="editController as ec" id="editScreen">
+  <div class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">EarthTionary!</a>
+      </div>
+
+      <div class="navbar-right">
+        <!--<p class="navbar-text">Signed in as <a href="#" class="navbar-link">Mark Otto</a></p>-->
+        <button type="button" class="btn btn-default navbar-btn sign-in-btn">
+          Sign in
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container content-container">
+    <form data-ng-submit="ec.handleSubmit()">
+      <div class="form-group">
+        <label>Term</label>
+        <input type="text"
+               class="form-control"
+               data-ng-model="ec.selectedDefinition.term"
+               placeholder="Term">
+      </div>
+      <div class="form-group">
+        <label>Definition</label>
+        <textarea class="form-control"
+                  rows="5"
+                  data-ng-model="ec.selectedDefinition.body"
+                  placeholder="Definition"></textarea>
+      </div>
+      <div class="form-group">
+        <label>Alternative terms</label>
+        <input type="text"
+               class="form-control"
+               data-ng-model="ec.altTermsField"
+               placeholder="Alternative terms">
+        <span class="help-block">
+          You can introduce multiple values separated by commas
+        </span>
+      </div>
+      <!--<div class="form-group">-->
+        <!--<label>Acronyms</label>-->
+        <!--<input type="text"-->
+               <!--class="form-control"-->
+               <!--data-ng-model="ec.acronymsField"-->
+               <!--placeholder="Acronyms">-->
+        <!--<span class="help-block">-->
+          <!--You can introduce multiple values separated by commas-->
+        <!--</span>-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+        <!--<label>Category</label>-->
+        <!--<input type="text"-->
+               <!--class="form-control"-->
+               <!--data-ng-model="ec.selectedDefinition.category"-->
+               <!--placeholder="Category">-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+      <!--<label for="exampleInputEmail1">Email address</label>-->
+      <!--<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+      <!--<label for="exampleInputPassword1">Password</label>-->
+      <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
+      <!--</div>-->
+      <!--<div class="form-group">-->
+      <!--<label for="exampleInputFile">File input</label>-->
+      <!--<input type="file" id="exampleInputFile">-->
+      <!--<p class="help-block">Example block-level help text here.</p>-->
+      <!--</div>-->
+      <!--<div class="checkbox">-->
+      <!--<label>-->
+      <!--<input type="checkbox"> Check me out-->
+      <!--</label>-->
+      <!--</div>-->
+      <button type="submit" class="btn btn-success">Submit</button>
+      <button data-ng-click="ec.handleCancel()" class="btn btn-default">Cancel</button>
+    </form>
+  </div>
+</div>
