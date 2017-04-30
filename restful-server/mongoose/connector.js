@@ -11,7 +11,7 @@ function connect (callback) {
       if (err) throw err
       console.log('Connected to database')
     }
-  var connection = mongoose.connect('mongodb://localhost/stw')
+  var connection = mongoose.connect('mongodb://localhost/earthtionary')
   mongoose.connection.on('error', console.error.bind(console, 'connection-error:'))
   mongoose.connection.once('open', _cb)
 }

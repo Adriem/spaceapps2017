@@ -1,6 +1,6 @@
 var readline = require('readline')
 
-var expressApp = require('./express/app.js')
+var expressApp = require('./express-app/app.js')
 var databaseConnector = require('./mongoose/connector.js')
 
 var port = process.env.PORT || 3000
