@@ -4,6 +4,9 @@ var express = require('express')
 var _ = require('lodash')
 var Definition = require('../mongoose/definition')
 var Acronym = require('../mongoose/acronym')
+var User = require('../mongoose/user')
+var Update = require('../mongoose/update')
+
 var routes = express.Router()
 var acronymRoutes = express.Router()
 var wordRoutes = express.Router()
@@ -16,7 +19,7 @@ routes.get('/', function (req,res) {
 acronymRoutes.route('/acronym')
 
 definitionRoutes.route('/definition/:id')
-    .put(function(req, res) {
+    .post(function(req, res) {
 
                 // get definition
                 Definition.findById(req.params.id, function(err, definition) {
@@ -24,20 +27,51 @@ definitionRoutes.route('/definition/:id')
                     if (err)
                         res.send(err);
 
-                    definition.text = req.body.text;  // update definition text
-                    definition.words = definition.words;
+                if(definition){
+                        var up = new Update();
 
-                    // save definition text
-                    definition.save(function(err) {
-                        if (err)
-                            res.send(err);
+                        up.change = req.body.text;  // update definition text
+                        up.words = definition.words;
+                        up.id_user = res.parameter.id_user;
+                        up.pendingApprobed = "false";
 
-                        res.json(definition);
-                    });
+                        // save definition text
+                        up.save(function(err) {
+                            if (err)
+                                res.send(err);
 
+                            res.json(definition);
+                        });
+                }
                 });
             });
 
+definitionRoutes.route('/vote/:id')
+    .put(function(req, res) {
+
+        Definition.findById(req.params.id, function(err, definition) {
+
+            if (err)
+                res.send(err);
+
+            definition.text = req.body.text;  // update definition text
+            definition.words = definition.words;
+            if (req.params.type) {
+                definition.positive_vote = req.body.positive_vote;
+            }else{
+                definition.negative_vote = req.body.negative_vote;
+            }
+
+            // save definition text
+            definition.save(function(err) {
+                if (err)
+                    res.send(err);
+
+                res.json(definition);
+            });
+
+        });
+});
 
 
     acronymRoutes.route('/acronym/:name').get(function (req, res) {
@@ -66,30 +100,30 @@ definitionRoutes.route('/definition/:id')
       }});
 
 
-      wordRoutes.route('/word/:word').get(function (req, res) {
-              if (req.params.name) {
-                Definition.find({ words: req.params.word }, function (err, definitions) {
-                    var words = definitions.map(function(definition){
-                     console.log(definition.words)
-                     console.log(req.params.name)
-                     //Hago la busqueda de la definicion
-                     Acronym.find({ words: definition.words }, function (err, acronyms) {
-                          console.log(acronyms)
-                       var defArray = acronyms.map(function(acronym){
-                          var dObject = {
-                                   def_id: defini._id,
-                                   acronym: acronym.name,
-                                   word: defini.words,
-                                   text:defini.text,
-                                   positive_vote: defini.positive_vote,
-                                   negative_vote: defini.negative_vote};
-                          return dObject
+      wordRoutes.route('/word/:name').get(function (req, res) {
+             if (req.params.name) {
+                       Acronym.find({ words: req.params.name }, function (err, acronyms) {
+                           var words = acronyms.map(function(acronym){
+                            console.log(acronym.words)
+                            console.log(req.params.name)
+                            //Hago la busqueda de la definicion
+                            Definition.find({ words: acronym.words }, function (err, definitions) {
+                                 console.log(definitions)
+                              var defArray = definitions.map(function(defini){
+                                 var dObject = {
+                                          def_id: defini._id,
+                                          acronym: acronym.name,
+                                          word: defini.words,
+                                          text:defini.text,
+                                          positive_vote: defini.positive_vote,
+                                          negative_vote: defini.negative_vote};
+                                 return dObject
+                              });
+                              res.json(defArray)
+                            });
                        });
-                       res.json(defArray)
                      });
-                });
-              });
-            }});
+       }});
 
 
    // REGISTER OUR ROUTES -------------------------------
